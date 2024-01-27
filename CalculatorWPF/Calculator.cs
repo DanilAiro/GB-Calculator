@@ -62,6 +62,7 @@ namespace CalculatorWPF
 
     public void C()
     {
+      results.Clear();
       result = 0;
       Calculation();
     }
