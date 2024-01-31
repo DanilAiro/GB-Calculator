@@ -24,7 +24,7 @@ namespace CalculatorWPF
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-      bool parse = int.TryParse(InputText.Text, out int value);
+      bool parse = float.TryParse(InputText.Text, out float value);
       var name = (e.Source as FrameworkElement).Name;
 
       if (InputText.Text == "" || name == "Clear")
