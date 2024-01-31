@@ -5,15 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculatorWPF"
         mc:Ignorable="d"
-        Title="Calculator" Height="800" Width="450">
+        Title="Calculator" Height="500" Width="500"
+        Closed="Window_Closed">
   <Grid>
-    <Button Name="Add" Click="Button_Click" Content="Плюс" HorizontalAlignment="Left" Margin="80,276,0,0" VerticalAlignment="Top" Height="85" Width="75"/>
-    <Button Name="Sub" Click="Button_Click" Content="Минус" HorizontalAlignment="Left" Margin="302,276,0,0" VerticalAlignment="Top" Height="85" Width="75" RenderTransformOrigin="0.507,0.518"/>
-    <Button Name="Mult" Click="Button_Click" Content="Умножить" HorizontalAlignment="Left" Margin="80,522,0,0" VerticalAlignment="Top" Height="85" Width="75"/>
-    <Button Name="Div" Click="Button_Click" Content="Разделить" HorizontalAlignment="Left" Margin="302,522,0,0" VerticalAlignment="Top" Height="85" Width="75"/>
-    <Button  Name="C" Click="Button_Click" Content="C" HorizontalAlignment="Center" Margin="0,198,0,0" VerticalAlignment="Top" Height="43" Width="100"/>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Button Grid.Column="0" Grid.Row="1" Name="Add" Click="Button_Click" Content="Плюс" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" Height="80" Width="200"/>
+    <Button Grid.Column="1" Grid.Row="1" Name="Sub" Click="Button_Click" Content="Минус" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Height="80" Width="200" RenderTransformOrigin="0.507,0.518" Margin="0,29,0,0"/>
+    <Button Grid.Column="0" Grid.Row="2" Name="Mult" Click="Button_Click" Content="Умножить" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,32" Width="200" Height="80"/>
+    <Button Grid.Column="1" Grid.Row="2" Name="Div" Click="Button_Click" Content="Разделить" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,32" Width="200" Height="80"/>
+    <Button Name="Clear" Click="Button_Click" Content="C" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="200" Margin="0,134,0,0" Grid.RowSpan="2"/>
+    <Button Name="Cancel" Click="Button_Click" Content="&lt;-" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="200" Margin="0,134,0,0" Grid.RowSpan="2" Grid.Column="1"/>
 
-    <TextBox Name="InputText" HorizontalAlignment="Left" Margin="58,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="84"/>
-    <Label Name="Answer" Content="Label" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="280,84,0,0" VerticalAlignment="Top" Height="84" Width="120"/>
+    <TextBox Grid.Column="0" Grid.Row="0" Name="InputText" FontSize="35" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Center" Width="200" Height="80"/>
+    <Label Grid.Column="1" Grid.Row="0" Name="Answer" Content="" FontSize="35" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,32,0,32" Width="200" Height="80"/>
   </Grid>
 </Window>
